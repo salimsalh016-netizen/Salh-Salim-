@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/><meta content="web_standard" name="shell-type"/><title>صالح سالم | Salh Salim - مهندس برمجيات ومطور Full-Stack</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&amp;family=Noto+Kufi+Arabic:wght@400;600;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+.font-mono-code{font-family:'Space Mono','Fira Code',monospace,Consolas,Courier;}
+.terminal-glow{box-shadow:0 0 25px -5px rgba(208, 188, 255, 0.15);}
+.terminal-glow-sm{box-shadow:0 0 15px -3px rgba(208, 188, 255, 0.2);}
+.terminal-border{border-color:#323347;}
+.terminal-border-glow{border-color:#675299;box-shadow:0 0 12px rgba(208, 188, 255, 0.12);}
+.code-glow{text-shadow:0 0 8px rgba(208, 188, 255, 0.4);}
+
+html{scroll-behavior:smooth;scroll-padding-top:96px;background:#101224;-webkit-text-size-adjust:100%}
+body{overflow-x:clip}img,svg,video,canvas{max-width:100%}
+main .grid>*{min-width:0}
+html body a,html body .font-mono-code{overflow-wrap:anywhere}
+html body pre,html body code{overflow-wrap:normal}
+html body main{min-height:100dvh}
+html body h1,html body h2,html body h3{overflow-wrap:anywhere}
+#mm.open{max-height:calc(100dvh - 5rem);overflow-y:auto}
+@media (max-width:1023px){html body h1{font-size:clamp(2rem,8vw,3rem);line-height:1.25}html body h1 span{font-size:clamp(1.1rem,4.5vw,1.6rem)}html body h2{font-size:clamp(1.5rem,6vw,2rem);line-height:1.3}}
+@media (max-width:767px){html body input,html body select,html body textarea{font-size:16px!important}html body button,html body select{min-height:44px}}
+@media (max-width:639px){html body section{padding:3.5rem 1rem!important}html body footer>div{padding-left:1rem;padding-right:1rem}html body footer{margin-top:3rem}html body header>div{padding-left:1rem;padding-right:1rem;gap:.5rem}html body header>div>div:last-child>div{display:none}.text-\[11px\],.text-\[10px\]{font-size:12px!important}html body .grid{gap:1rem}}
+@media (max-width:359px){html body header>div>div:first-child span:last-child{display:none}html body .grid-cols-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1536px){html{font-size:112.5%}html body .max-w-7xl{max-width:88rem}}
+@media (min-width:1920px){html{font-size:125%}}
+@media (min-width:2560px){html{font-size:150%}}
+@media (hover:none){html body .hover\:bg-white:hover{background:#d0bcff}}
+header{padding-top:env(safe-area-inset-top,0px)}
+footer{padding-bottom:env(safe-area-inset-bottom,0px)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+#sp{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,#d0bcff,#e4c18e);z-index:60;box-shadow:0 0 10px #d0bcff}
+#mm{display:none}#mm.open{display:flex}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);opacity:0;transition:.35s;z-index:70;pointer-events:none;max-width:92vw}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#top{position:fixed;left:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:55;opacity:0;pointer-events:none;transition:.3s}
+#top.show{opacity:1;pointer-events:auto}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style><script src="https://cdn.tailwindcss.com/3.4.17?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface-tint": "#d0bcff",
+        "on-surface": "#e0e0fb",
+        "inverse-surface": "#e0e0fb",
+        "on-error": "#690005",
+        "on-tertiary-fixed": "#281800",
+        "inverse-on-surface": "#2d2f43",
+        "on-secondary": "#2e2d4d",
+        "background": "#101224",
+        "primary-container": "#270f56",
+        "on-primary-fixed-variant": "#4f3a7f",
+        "secondary-fixed-dim": "#c5c3eb",
+        "on-surface-variant": "#cbc4d1",
+        "surface-container-highest": "#323347",
+        "surface-bright": "#36384c",
+        "surface-dim": "#101224",
+        "on-tertiary-fixed-variant": "#5b431a",
+        "on-background": "#e0e0fb",
+        "primary-fixed-dim": "#d0bcff",
+        "on-primary-container": "#d0bcff",
+        "inverse-primary": "#675299",
+        "outline-variant": "#494550",
+        "tertiary-fixed": "#ffddae",
+        "surface-container-high": "#27283c",
+        "surface-container-low": "#181a2d",
+        "surface-container": "#1c1e31",
+        "tertiary-container": "#2e1d00",
+        "on-primary": "#382367",
+        "error": "#ffb4ab",
+        "surface-container-lowest": "#0b0d1f",
+        "on-secondary-fixed": "#181837",
+        "secondary-fixed": "#e2dfff",
+        "secondary": "#c5c3eb",
+        "secondary-container": "#444365",
+        "on-secondary-fixed-variant": "#444365",
+        "on-tertiary-container": "#e4c18e",
+        "primary": "#d0bcff",
+        "on-error-container": "#ffdad6",
+        "tertiary-fixed-dim": "#e4c18e",
+        "error-container": "#93000a",
+        "on-tertiary": "#422c06",
+        "surface": "#101224",
+        "primary-fixed": "#e9ddff",
+        "on-secondary-container": "#b3b1d9",
+        "surface-variant": "#323347",
+        "on-primary-fixed": "#220851",
+        "outline": "#948e9b",
+        "tertiary": "#e4c18e"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "fontFamily": {
+        "headline": ["Space Mono", "Noto Kufi Arabic"],
+        "display": ["Space Mono", "Noto Kufi Arabic"],
+        "body": ["DM Sans", "Noto Sans Arabic"],
+        "label": ["Space Mono", "Noto Kufi Arabic"]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body text-on-surface antialiased selection:bg-primary-container selection:text-primary"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-md border-b border-surface-container-highest"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><div class="flex items-center gap-4 shrink-0"><div class="w-10 h-10 rounded bg-primary-container text-primary border border-primary/40 flex items-center justify-center font-mono-code font-bold text-lg terminal-glow-sm">&lt;/&gt;</div><div class="flex flex-col text-right"><span class="font-headline text-lg text-on-surface tracking-tight font-bold">صالح سالم</span><span class="font-mono-code text-[11px] text-primary font-semibold tracking-wider">Lead Full-Stack &amp; Software Architect</span></div></div><nav class="hidden xl:flex items-center gap-8" data-active-classes="text-primary font-bold border-b-2 border-primary"><a aria-current="page" class="transition-colors text-primary font-bold border-b-2 border-primary pb-1 font-headline text-sm" data-path="home" href="#">الرئيسية</a><a class="font-headline text-sm text-on-surface-variant hover:text-primary transition-colors pb-1" data-path="stack" href="#tech-stack">المكدس البرمجي</a><a class="font-headline text-sm text-on-surface-variant hover:text-primary transition-colors pb-1" data-path="projects" href="#projects">المشاريع والأنظمة</a><a class="font-headline text-sm text-on-surface-variant hover:text-primary transition-colors pb-1" data-path="architecture" href="#architecture">فلسفة الهندسة</a><a class="font-headline text-sm text-on-surface-variant hover:text-primary transition-colors pb-1" data-path="terminal" href="#terminal-section">كود حي (Playground)</a><a class="font-headline text-sm text-on-surface-variant hover:text-primary transition-colors pb-1" data-path="contact" href="#contact">تواصل وتعاقد</a></nav><div class="flex items-center gap-4 shrink-0"><a class="hidden md:inline-flex items-center justify-center bg-primary hover:bg-white text-on-primary font-headline font-bold text-sm px-5 py-2.5 transition-all rounded border border-primary/80 gap-2 terminal-glow-sm" data-path="hire" href="#contact"><span class="material-symbols-outlined text-sm">terminal</span><span>وظّفني / طلب مشروع</span></a><div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest border border-surface-container-highest rounded"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse inline-block shadow-[0_0_8px_#34d399]"></span><span class="font-mono-code text-xs font-bold text-secondary">Open to Contract</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<!-- HERO SECTION (Terminal Fidelity Cyberpunk Dark Style) -->
+<section class="relative overflow-hidden py-16 lg:py-24 px-6 lg:px-12 max-w-7xl mx-auto w-full">
+<!-- Cyberpunk Terminal Ambient Glows -->
+<div class="absolute top-12 left-10 w-72 h-72 rounded-full bg-primary-container/30 blur-3xl pointer-events-none -z-0"></div>
+<div class="absolute top-36 right-16 w-80 h-80 rounded-full bg-surface-container-high/40 blur-3xl pointer-events-none -z-0"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+<!-- Typography & Tech Narrative -->
+<div class="lg:col-span-7 flex flex-col gap-6 text-right">
+<div class="inline-flex items-center gap-3 self-start bg-surface-container-lowest/80 backdrop-blur-sm px-4 py-2 border border-surface-container-highest rounded terminal-glow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-mono-code text-xs font-bold text-primary tracking-wider">FULL_STACK_ARCHITECT // HIGH_PERFORMANCE_SYSTEMS</span>
+</div>
+<h1 class="font-headline text-4xl lg:text-[62px] lg:leading-[72px] text-on-surface tracking-tight font-extrabold">
+صالح سالم
+<span class="block font-headline text-2xl lg:text-3xl mt-3 text-tertiary font-bold">مهندس برمجيات Full-Stack ومطور حلول الويب المتكاملة</span>
+</h1>
+<p class="font-body text-base lg:text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+أبني منصات رقمية فائقة السرعة وأنظمة سحابية موزعة باستخدام منظومة 
+<span class="text-primary font-mono-code font-bold bg-primary-container px-2 py-0.5 rounded border border-primary/30">React / Next.js</span> في الواجهات الأمامية، و 
+<span class="text-tertiary font-mono-code font-bold bg-tertiary-container/80 px-2 py-0.5 rounded border border-tertiary/30">Node.js / Go / Python</span> في المعالجات الخلفية والـ Microservices، مع بنية قواعد بيانات متقدمة (<span class="text-secondary font-mono-code font-bold">PostgreSQL &amp; Redis</span>) تضمن أداءً لا يلين وأعلى معايير الأمان وقابلية التوسع المليوني.
+</p>
+<!-- CTAs & Micro Actions -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="bg-primary hover:bg-white text-on-primary font-headline font-bold text-sm px-8 py-4 transition-all rounded border border-primary/80 flex items-center gap-3 terminal-glow-sm" href="#projects">
+<span class="material-symbols-outlined text-sm">code</span>
+<span>استكشف الكود والمشاريع</span>
+</a>
+<a class="bg-surface-container-low hover:bg-surface-container text-on-surface font-headline font-bold text-sm px-8 py-4 transition-colors flex items-center gap-3 border border-surface-container-highest rounded hover:border-outline" href="#contact">
+<span class="material-symbols-outlined text-base text-primary">download</span>
+<span>تحميل السيرة التقنية (Dev CV)</span>
+</a>
+</div>
+<!-- Highlight Developer Stats Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-surface-container-highest mt-4">
+<div class="bg-surface-container-lowest/90 p-4 text-right border border-surface-container-highest rounded">
+<span class="block font-headline text-3xl text-primary font-bold font-mono-code code-glow">+8 Yrs</span>
+<span class="font-headline text-xs font-semibold text-on-surface-variant">خبرة في هندسة البرمجيات</span>
+</div>
+<div class="bg-surface-container-lowest/90 p-4 text-right border border-surface-container-highest rounded">
+<span class="block font-headline text-3xl text-secondary font-bold font-mono-code">+45</span>
+<span class="font-headline text-xs font-semibold text-on-surface-variant">مشروع ويب مكتمل ومنتج</span>
+</div>
+<div class="bg-surface-container-lowest/90 p-4 text-right border border-surface-container-highest rounded">
+<span class="block font-headline text-3xl text-tertiary font-bold font-mono-code">99.9%</span>
+<span class="font-headline text-xs font-semibold text-on-surface-variant">جاهزية واستقرار (Uptime)</span>
+</div>
+<div class="bg-surface-container-lowest/90 p-4 text-right border border-surface-container-highest rounded">
+<span class="block font-headline text-3xl text-primary font-bold font-mono-code">+2M</span>
+<span class="font-headline text-xs font-semibold text-on-surface-variant">مستخدم نشط للأنظمة</span>
+</div>
+</div>
+</div>
+<!-- Cyberpunk Terminal Fidelity CLI Window (No Photos) -->
+<div class="lg:col-span-5 relative flex justify-center">
+<div class="w-full max-w-lg bg-surface-container-lowest border border-surface-container-highest rounded overflow-hidden flex flex-col font-mono-code text-xs terminal-border-glow shadow-2xl">
+<!-- Window Titlebar -->
+<div class="bg-surface-container-low px-4 py-3 flex items-center justify-between border-b border-surface-container-highest text-on-surface">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error inline-block border border-error/50"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary inline-block border border-tertiary/50"></span>
+<span class="w-3 h-3 rounded-full bg-emerald-400 inline-block border border-emerald-400/50"></span>
+</div>
+<div class="text-[11px] text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary">terminal</span>
+<span class="font-bold text-on-surface">saleh@salhsalim-arch:~</span>
+</div>
+<span class="text-[10px] text-primary font-bold bg-primary-container px-2 py-0.5 rounded border border-primary/30">zsh</span>
+</div>
+<!-- Terminal Content -->
+<div class="p-6 flex flex-col gap-3 text-on-surface leading-relaxed text-left bg-surface-container-lowest/95" dir="ltr">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="text-primary font-bold">$</span>
+<span class="font-semibold text-on-surface">whoami</span>
+</div>
+<div class="text-tertiary font-bold pl-3 border-l-2 border-primary">
+&gt; Saleh Salim (Senior Lead Full-Stack Engineer &amp; Architect)
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant mt-1">
+<span class="text-primary font-bold">$</span>
+<span class="font-semibold text-on-surface">cat profile.config.json</span>
+</div>
+<pre class="bg-surface-container-low p-4 text-xs text-on-surface overflow-x-auto border border-surface-container-highest rounded leading-5"><code>{
+  <span class="text-primary font-bold">"role"</span>: <span class="text-secondary font-bold">"Full-Stack Web Architect"</span>,
+  <span class="text-primary font-bold">"frontend"</span>: [<span class="text-tertiary">"Next.js 14"</span>, <span class="text-tertiary">"React"</span>, <span class="text-tertiary">"TypeScript"</span>, <span class="text-tertiary">"Tailwind"</span>],
+  <span class="text-primary font-bold">"backend"</span>: [<span class="text-tertiary">"Node.js"</span>, <span class="text-tertiary">"NestJS"</span>, <span class="text-tertiary">"Go"</span>, <span class="text-tertiary">"Python"</span>],
+  <span class="text-primary font-bold">"data"</span>: [<span class="text-tertiary">"PostgreSQL"</span>, <span class="text-tertiary">"Redis"</span>, <span class="text-tertiary">"GraphQL"</span>],
+  <span class="text-primary font-bold">"infra"</span>: [<span class="text-tertiary">"Docker"</span>, <span class="text-tertiary">"Kubernetes"</span>, <span class="text-tertiary">"AWS"</span>, <span class="text-tertiary">"CI/CD"</span>],
+  <span class="text-primary font-bold">"status"</span>: <span class="bg-primary-container px-2 py-0.5 rounded text-primary font-bold border border-primary/40">"AVAILABLE_FOR_CONTRACT"</span>
+}</code></pre>
+<div class="flex items-center gap-2 text-on-surface-variant mt-1">
+<span class="text-primary font-bold">$</span>
+<span class="font-semibold text-on-surface">benchmarks --run-latency-audit</span>
+</div>
+<div class="text-on-surface flex items-center justify-between bg-surface-container p-2 border border-surface-container-highest rounded">
+<span class="font-bold text-emerald-400">✓ API Response Avg: 18ms</span>
+<span class="text-[11px] font-bold text-tertiary">P99: 42ms</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="text-primary font-bold">$</span>
+<span class="w-2 h-4 bg-primary inline-block animate-pulse"></span>
+</div>
+</div>
+<!-- Terminal Footer Status Bar -->
+<div class="bg-surface-container-high px-4 py-2 border-t border-surface-container-highest flex items-center justify-between text-[11px] text-on-surface-variant font-semibold">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span> Git: main*</span>
+<span class="text-secondary">UTF-8 // TypeScript 5.4</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TECH STACK & CORE COMPETENCIES -->
+<section class="py-20 bg-surface-container-lowest/70 border-y border-surface-container-highest px-6 lg:px-12 w-full" id="tech-stack">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
+<div class="max-w-2xl text-right">
+<div class="flex items-center gap-2 text-primary font-mono-code text-xs font-bold mb-2">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span>STACK_COMPONENTS &amp; ECOSYSTEM</span>
+</div>
+<h2 class="font-headline text-3xl lg:text-4xl text-on-surface font-bold">المكدس التقني وهندسة الحلول الشاملة</h2>
+<p class="font-body text-base text-on-surface-variant mt-3">
+أستخدم أحدث أطر العمل والتقنيات المعيارية لبناء واجهات فائقة الاستجابة، ونظم معالجة خلفية متينة تتحمل أعتى أحمال البيانات.
+</p>
+</div>
+<div class="bg-surface-container-low p-4 self-start lg:self-end border border-surface-container-highest rounded terminal-glow-sm">
+<span class="font-mono-code text-[11px] text-on-surface-variant uppercase tracking-wider block font-bold">Code Quality Standard</span>
+<span class="font-headline text-lg text-primary font-bold">Clean Architecture &amp; TDD</span>
+</div>
+</div>
+<!-- 4 Tech Stack Pillars Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- 1. Frontend Development -->
+<div class="bg-surface-container-low/90 p-8 flex flex-col justify-between transition-all group border border-surface-container-highest hover:border-primary/60 rounded">
+<div>
+<div class="w-12 h-12 bg-primary-container border border-primary/40 rounded flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors terminal-glow-sm">
+<span class="material-symbols-outlined">devices</span>
+</div>
+<h3 class="font-headline text-xl text-on-surface font-bold mb-2">الواجهات الأمامية (Frontend)</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+تطوير تطبيقات الويب أحادية الصفحة وبنى الخادم الهجين بتركيز على الأداء العالي ومعدل تحويل وتجربة مستخدم لا تضاهى.
+</p>
+<div class="flex flex-wrap gap-1.5 font-mono-code text-xs">
+<span class="bg-surface-container-highest border border-surface-container-highest text-primary font-semibold px-2 py-0.5 rounded">Next.js 14</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-secondary font-semibold px-2 py-0.5 rounded">React.js</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-on-surface px-2 py-0.5 rounded">TypeScript</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-on-surface px-2 py-0.5 rounded">Tailwind CSS</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-tertiary font-semibold px-2 py-0.5 rounded">Redux/Zustand</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded">WebSockets</span>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-surface-container-highest font-mono-code text-xs text-primary font-bold flex items-center justify-between">
+<span class="bg-primary-container px-2 py-0.5 rounded border border-primary/30 text-primary">Lighthouse 98+</span>
+<span class="material-symbols-outlined text-sm">speed</span>
+</div>
+</div>
+<!-- 2. Backend & Microservices -->
+<div class="bg-surface-container-low/90 p-8 flex flex-col justify-between transition-all group border border-surface-container-highest hover:border-primary/60 rounded">
+<div>
+<div class="w-12 h-12 bg-surface-container-high border border-surface-container-highest rounded flex items-center justify-center text-secondary mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors terminal-glow-sm">
+<span class="material-symbols-outlined">dns</span>
+</div>
+<h3 class="font-headline text-xl text-on-surface font-bold mb-2">الواجهات الخلفية والـ APIs</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+بناء خدمات دقيقة وخوادم معالجة قادرة على إدارة آلاف الطلبات المتزامنة في الثانية مع توثيق صارم وأمان مشدد.
+</p>
+<div class="flex flex-wrap gap-1.5 font-mono-code text-xs">
+<span class="bg-surface-container-highest border border-surface-container-highest text-primary font-semibold px-2 py-0.5 rounded">Node.js</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-secondary font-semibold px-2 py-0.5 rounded">NestJS</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-tertiary px-2 py-0.5 rounded">Golang</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-on-surface px-2 py-0.5 rounded">Python (FastAPI)</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-primary font-semibold px-2 py-0.5 rounded">GraphQL</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded">gRPC</span>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-surface-container-highest font-mono-code text-xs text-secondary font-bold flex items-center justify-between">
+<span class="bg-surface-container px-2 py-0.5 rounded border border-surface-container-highest text-secondary">REST &amp; Event-Driven</span>
+<span class="material-symbols-outlined text-sm">hub</span>
+</div>
+</div>
+<!-- 3. Databases & Cache -->
+<div class="bg-surface-container-low/90 p-8 flex flex-col justify-between transition-all group border border-surface-container-highest hover:border-primary/60 rounded">
+<div>
+<div class="w-12 h-12 bg-tertiary-container/60 border border-tertiary/40 rounded flex items-center justify-center text-tertiary mb-6 group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors terminal-glow-sm">
+<span class="material-symbols-outlined">database</span>
+</div>
+<h3 class="font-headline text-xl text-on-surface font-bold mb-2">قواعد البيانات والتخزين</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+تصميم مخططات قواعد البيانات المعقدة، الفهرسة المتقدمة، تحسين استعلامات SQL، وحلول الـ In-Memory Caching.
+</p>
+<div class="flex flex-wrap gap-1.5 font-mono-code text-xs">
+<span class="bg-surface-container-highest border border-surface-container-highest text-secondary font-semibold px-2 py-0.5 rounded">PostgreSQL</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-primary font-semibold px-2 py-0.5 rounded">Redis</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-on-surface px-2 py-0.5 rounded">MongoDB</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-on-surface px-2 py-0.5 rounded">Prisma ORM</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-tertiary font-semibold px-2 py-0.5 rounded">Elasticsearch</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded">ClickHouse</span>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-surface-container-highest font-mono-code text-xs text-tertiary font-bold flex items-center justify-between">
+<span class="bg-surface-container px-2 py-0.5 rounded border border-surface-container-highest text-tertiary">Zero Data Loss (ACID)</span>
+<span class="material-symbols-outlined text-sm">storage</span>
+</div>
+</div>
+<!-- 4. DevOps, Cloud & CI/CD -->
+<div class="bg-surface-container-low/90 p-8 flex flex-col justify-between transition-all group border border-surface-container-highest hover:border-primary/60 rounded">
+<div>
+<div class="w-12 h-12 bg-secondary-container/60 border border-secondary/40 rounded flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-on-secondary transition-colors terminal-glow-sm">
+<span class="material-symbols-outlined">cloud_sync</span>
+</div>
+<h3 class="font-headline text-xl text-on-surface font-bold mb-2">السحابة وهندسة DevOps</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+نشر مؤتمت بدون توقف للخدمة، عزل عبر الحاويات، وإدارة البنية التحتية البرمجية (IaC) بحماية متكاملة.
+</p>
+<div class="flex flex-wrap gap-1.5 font-mono-code text-xs">
+<span class="bg-surface-container-highest border border-surface-container-highest text-primary font-semibold px-2 py-0.5 rounded">Docker</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-secondary font-semibold px-2 py-0.5 rounded">Kubernetes</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-on-surface px-2 py-0.5 rounded">AWS (ECS/S3/EC2)</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-on-surface px-2 py-0.5 rounded">GitHub Actions</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-tertiary font-semibold px-2 py-0.5 rounded">Terraform</span>
+<span class="bg-surface-container-highest border border-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded">Nginx</span>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-surface-container-highest font-mono-code text-xs text-primary font-bold flex items-center justify-between">
+<span class="bg-surface-container px-2 py-0.5 rounded border border-surface-container-highest text-primary">Automated Pipelines</span>
+<span class="material-symbols-outlined text-sm">all_inclusive</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- LIVE ARCHITECTURE & INTERACTIVE CODE SNIPPET -->
+<section class="py-20 px-6 lg:px-12 max-w-7xl mx-auto w-full" id="terminal-section">
+<div class="mb-12 text-right">
+<div class="inline-flex items-center gap-2 text-primary font-mono-code text-xs font-bold mb-2">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span>SYSTEM_CODE &amp; ARCHITECTURE_SAMPLE</span>
+</div>
+<h2 class="font-headline text-3xl lg:text-4xl text-on-surface font-bold">عينة معمارية: معالجة الطلبات اللحظية وتوزيع الحمل</h2>
+<p class="font-body text-base text-on-surface-variant max-w-2xl mt-2">
+نموذج تطبيقي لكيفية كتابة كود نظيف (Clean Code) في NestJS / TypeScript مع آلية الـ Caching بواسطة Redis والتحقق المسبق من الصلاحيات.
+</p>
+</div>
+<div class="bg-surface-container-lowest border border-surface-container-highest rounded overflow-hidden terminal-glow">
+<!-- Code Header -->
+<div class="bg-surface-container-low px-6 py-3.5 flex items-center justify-between border-b border-surface-container-highest text-on-surface">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-emerald-400 inline-block"></span>
+<span class="font-mono-code text-xs text-on-surface-variant mr-3">src/modules/orders/orders.controller.ts</span>
+</div>
+<div class="flex items-center gap-3 font-mono-code text-xs">
+<span class="text-primary font-bold bg-primary-container px-2 py-0.5 rounded border border-primary/40">TypeScript</span>
+<span class="text-secondary font-semibold">Production Ready</span>
+</div>
+</div>
+<!-- Code Viewer -->
+<div class="p-6 overflow-x-auto text-left font-mono-code text-sm leading-6 bg-surface-container-lowest" dir="ltr">
+<pre class="text-on-surface"><code><span class="text-primary font-bold">import</span> { Controller, Post, Body, UseGuards, UseInterceptors } <span class="text-primary font-bold">from</span> <span class="text-tertiary">'@nestjs/common'</span>;
+<span class="text-primary font-bold">import</span> { AuthGuard } <span class="text-primary font-bold">from</span> <span class="text-tertiary">'@app/auth/guards'</span>;
+<span class="text-primary font-bold">import</span> { RateLimitInterceptor } <span class="text-primary font-bold">from</span> <span class="text-tertiary">'@app/common/interceptors'</span>;
+<span class="text-primary font-bold">import</span> { OrdersService } <span class="text-primary font-bold">from</span> <span class="text-tertiary">'./orders.service'</span>;
+<span class="text-primary font-bold">import</span> { CreateOrderDto } <span class="text-primary font-bold">from</span> <span class="text-tertiary">'./dto/create-order.dto'</span>;
+
+<span class="text-primary-fixed-dim font-bold">@Controller</span>(<span class="text-tertiary">'api/v2/orders'</span>)
+<span class="text-primary-fixed-dim font-bold">@UseGuards</span>(AuthGuard)
+<span class="text-primary font-bold">export class</span> <span class="text-primary font-extrabold bg-primary-container/70 px-1.5 py-0.5 rounded border border-primary/40">OrdersController</span> {
+  <span class="text-primary font-bold">constructor</span>(<span class="text-secondary font-semibold">private readonly</span> ordersService: OrdersService) {}
+
+  <span class="text-primary-fixed-dim font-bold">@Post</span>(<span class="text-tertiary">'process-checkout'</span>)
+  <span class="text-primary-fixed-dim font-bold">@UseInterceptors</span>(<span class="text-primary font-bold">new</span> RateLimitInterceptor({ max: <span class="text-tertiary font-bold">100</span>, windowMs: <span class="text-tertiary font-bold">60000</span> }))
+  <span class="text-primary font-bold">async</span> <span class="text-on-surface font-bold">checkout</span>(<span class="text-primary-fixed-dim font-bold">@Body</span>() dto: CreateOrderDto) {
+    <span class="text-outline font-semibold">// 1. Idempotency validation &amp; Redis atomic lock</span>
+    <span class="text-primary font-bold">await</span> <span class="text-on-surface font-semibold">this</span>.ordersService.acquireDistributedLock(dto.idempotencyKey);
+    
+    <span class="text-outline font-semibold">// 2. Execute transactional persistence &amp; broadcast event to Kafka</span>
+    <span class="text-primary font-bold">const</span> transactionResult = <span class="text-primary font-bold">await</span> <span class="text-on-surface font-semibold">this</span>.ordersService.executeTransaction(dto);
+    
+    <span class="text-primary font-bold">return</span> {
+      statusCode: <span class="text-tertiary font-bold">201</span>,
+      orderId: transactionResult.id,
+      processingTimeMs: transactionResult.latency,
+      status: <span class="text-tertiary font-bold">'ACCEPTED_IN_QUEUE'</span>
+    };
+  }
+}</code></pre>
+</div>
+<!-- Architecture Badges -->
+<div class="bg-surface-container-low px-6 py-4 border-t border-surface-container-highest flex flex-wrap items-center justify-between gap-4 font-mono-code text-xs">
+<div class="flex items-center gap-4 text-on-surface font-semibold">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary inline-block"></span> Idempotency Check</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary inline-block"></span> Redis Distributed Lock</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-tertiary inline-block"></span> Kafka Event Streaming</span>
+</div>
+<div class="bg-primary-container text-primary font-bold px-3 py-1 rounded border border-primary/40">Test Coverage: 96.4%</div>
+</div>
+</div>
+</section>
+<!-- FEATURED PROJECTS -->
+<section class="py-20 bg-surface-container-lowest/70 border-y border-surface-container-highest px-6 lg:px-12 w-full" id="projects">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div class="text-right">
+<div class="inline-flex items-center gap-2 text-primary font-mono-code text-xs font-bold mb-2">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span>PROD_SYSTEMS &amp; REPOSITORIES</span>
+</div>
+<h2 class="font-headline text-3xl lg:text-4xl text-on-surface font-bold">أنظمة ومشاريع برمجية في بيئة الإنتاج</h2>
+<p class="font-body text-base text-on-surface-variant mt-2">
+حلول برمجية متكاملة شيدت من الصفر لخدمة آلاف المستخدمين وتحديات حركة البيانات العالية.
+</p>
+</div>
+<a class="bg-surface-container-low hover:bg-surface-container text-primary font-headline font-bold text-sm px-4 py-2 border border-surface-container-highest rounded hover:border-primary flex items-center gap-2 self-start transition-colors" href="#contact">
+<span>View GitHub Repositories</span>
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project 1: Enterprise E-Commerce Platform -->
+<div class="bg-surface-container-low p-8 flex flex-col justify-between border border-surface-container-highest rounded hover:border-primary/50 transition-all group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="bg-primary-container text-primary font-bold border border-primary/40 px-2.5 py-1 rounded font-mono-code text-xs">Full-Stack E-Commerce Engine</span>
+<div class="flex items-center gap-3 text-on-surface font-mono-code text-xs">
+<span class="font-bold text-tertiary">v3.2.0</span>
+<span class="material-symbols-outlined text-base text-on-surface-variant">open_in_new</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl text-on-surface font-bold mb-3">منصة تجارة إلكترونية فائقة السرعة للمبيعات الكبرى</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+بناء متجر إلكتروني بنظام SSR عبر Next.js مع سلة تسوق موزعة وأنظمة دفع متكاملة (Stripe, Apple Pay, Mada). المعالجة تدير أكثر من 8,000 عملية دفع متزامنة أثناء المواسم الترويجية مع الحفاظ على زمن استجابة دون 100ms.
+</p>
+<div class="flex flex-wrap gap-2 mb-6 font-mono-code text-xs">
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-primary font-bold">Next.js 14</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-secondary font-bold">NestJS</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-on-surface">PostgreSQL</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-on-surface">Redis Cache</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-tertiary font-bold">Docker</span>
+</div>
+</div>
+<div class="pt-6 border-t border-surface-container-highest grid grid-cols-3 gap-3 text-center font-mono-code text-xs">
+<div class="bg-surface-container border border-surface-container-highest rounded p-2">
+<span class="text-primary block font-bold text-base">99.98%</span>
+<span class="text-on-surface-variant text-[11px] font-semibold">Uptime SLA</span>
+</div>
+<div class="bg-surface-container border border-surface-container-highest rounded p-2">
+<span class="text-secondary block font-bold text-base">&lt;65ms</span>
+<span class="text-on-surface-variant text-[11px] font-semibold">TTFB Latency</span>
+</div>
+<div class="bg-surface-container border border-surface-container-highest rounded p-2">
+<span class="text-tertiary block font-bold text-base">8.5k/sec</span>
+<span class="text-on-surface-variant text-[11px] font-semibold">Max RPS</span>
+</div>
+</div>
+</div>
+<!-- Project 2: Real-Time SaaS Analytics Dashboard -->
+<div class="bg-surface-container-low p-8 flex flex-col justify-between border border-surface-container-highest rounded hover:border-primary/50 transition-all group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="bg-surface-container-high text-secondary font-bold border border-secondary/40 px-2.5 py-1 rounded font-mono-code text-xs">Real-Time SaaS Telemetry</span>
+<div class="flex items-center gap-3 text-on-surface font-mono-code text-xs">
+<span class="font-bold text-primary">v2.1.4</span>
+<span class="material-symbols-outlined text-base text-on-surface-variant">open_in_new</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl text-on-surface font-bold mb-3">لوحة تحليلات سحابية بالزمن الحقيقي (Live Analytics)</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+تطبيق سحابي لرصد سلوك المستخدمين وبث تدفقات البيانات اللحظية بواسطة WebSockets و SSE، مع ربطها بقاعدة ClickHouse التحليلية لتشغيل استعلامات ضخمة في أجزاء من الثانية دون إبطاء الواجهة.
+</p>
+<div class="flex flex-wrap gap-2 mb-6 font-mono-code text-xs">
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-primary font-bold">React 18</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-secondary font-bold">Go (Golang)</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-on-surface">WebSockets</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-on-surface">ClickHouse</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-tertiary font-bold">Tailwind</span>
+</div>
+</div>
+<div class="pt-6 border-t border-surface-container-highest grid grid-cols-3 gap-3 text-center font-mono-code text-xs">
+<div class="bg-surface-container border border-surface-container-highest rounded p-2">
+<span class="text-tertiary block font-bold text-base">1.4M+</span>
+<span class="text-on-surface-variant text-[11px] font-semibold">Events / Min</span>
+</div>
+<div class="bg-surface-container border border-surface-container-highest rounded p-2">
+<span class="text-primary block font-bold text-base">&lt;15ms</span>
+<span class="text-on-surface-variant text-[11px] font-semibold">WebSocket Ping</span>
+</div>
+<div class="bg-surface-container border border-surface-container-highest rounded p-2">
+<span class="text-secondary block font-bold text-base">Zero Lag</span>
+<span class="text-on-surface-variant text-[11px] font-semibold">Data Stream</span>
+</div>
+</div>
+</div>
+<!-- Project 3: Scalable Financial Web Gateway -->
+<div class="bg-surface-container-low p-8 flex flex-col justify-between border border-surface-container-highest rounded hover:border-primary/50 transition-all group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="bg-surface-container-high text-tertiary font-bold border border-tertiary/40 px-2.5 py-1 rounded font-mono-code text-xs">FinTech Microservices</span>
+<div class="flex items-center gap-3 text-on-surface font-mono-code text-xs">
+<span class="font-bold text-secondary">v4.0.1</span>
+<span class="material-symbols-outlined text-base text-on-surface-variant">open_in_new</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl text-on-surface font-bold mb-3">بوابة دفع وتحويل مالي مؤسسية عالية الاعتمادية</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+هيكلة وتطوير بوابة دفع سحابية موثقة ومتوافقة مع معايير PCI-DSS وأمن البيانات المصرفية. تم بناء معمارية Microservices متقدمة مع موازنة أحمال تلقائية وأنظمة فحص تكرار العمليات (Idempotency).
+</p>
+<div class="flex flex-wrap gap-2 mb-6 font-mono-code text-xs">
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-primary font-bold">Node.js</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-secondary font-bold">TypeScript</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-on-surface">PostgreSQL</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-on-surface">RabbitMQ</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-tertiary font-bold">Kubernetes</span>
+</div>
+</div>
+<div class="pt-6 border-t border-surface-container-highest grid grid-cols-3 gap-3 text-center font-mono-code text-xs">
+<div class="bg-surface-container border border-surface-container-highest rounded p-2">
+<span class="text-primary block font-bold text-base">$25M+</span>
+<span class="text-on-surface-variant text-[11px] font-semibold">Processed / Mo</span>
+</div>
+<div class="bg-surface-container border border-surface-container-highest rounded p-2">
+<span class="text-secondary block font-bold text-base">PCI-DSS</span>
+<span class="text-on-surface-variant text-[11px] font-semibold">Level 1 Compliant</span>
+</div>
+<div class="bg-surface-container border border-surface-container-highest rounded p-2">
+<span class="text-tertiary block font-bold text-base">100%</span>
+<span class="text-on-surface-variant text-[11px] font-semibold">Audit Pass</span>
+</div>
+</div>
+</div>
+<!-- Project 4: Enterprise Headless CMS & Multi-Tenant Engine -->
+<div class="bg-surface-container-low p-8 flex flex-col justify-between border border-surface-container-highest rounded hover:border-primary/50 transition-all group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="bg-primary-container text-primary font-bold border border-primary/40 px-2.5 py-1 rounded font-mono-code text-xs">Multi-Tenant Headless Platform</span>
+<div class="flex items-center gap-3 text-on-surface font-mono-code text-xs">
+<span class="font-bold text-primary">v1.9.0</span>
+<span class="material-symbols-outlined text-base text-on-surface-variant">open_in_new</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl text-on-surface font-bold mb-3">محرك محتوى مؤسسي متعدد المستأجرين (Multi-Tenant)</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+محرك لإدارة ونشر المحتوى للشركات الكبرى بنظام GraphQL API، يدعم تعدد اللغات (RTL/LTR)، وصلاحيات RBAC محكمة، مع نظام إنشاء الصفحات الديناميكي السريع ومعالجة الوسائط على الحافة (Edge Functions).
+</p>
+<div class="flex flex-wrap gap-2 mb-6 font-mono-code text-xs">
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-primary font-bold">Next.js App Router</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-secondary font-bold">GraphQL</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-on-surface">MongoDB</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-on-surface">AWS S3</span>
+<span class="bg-surface-container-highest border border-surface-container-highest px-2.5 py-1 rounded text-tertiary font-bold">Redis</span>
+</div>
+</div>
+<div class="pt-6 border-t border-surface-container-highest grid grid-cols-3 gap-3 text-center font-mono-code text-xs">
+<div class="bg-surface-container border border-surface-container-highest rounded p-2">
+<span class="text-tertiary block font-bold text-base">120+</span>
+<span class="text-on-surface-variant text-[11px] font-semibold">Tenant Portals</span>
+</div>
+<div class="bg-surface-container border border-surface-container-highest rounded p-2">
+<span class="text-secondary block font-bold text-base">Edge Cache</span>
+<span class="text-on-surface-variant text-[11px] font-semibold">Cloudflare Worker</span>
+</div>
+<div class="bg-surface-container border border-surface-container-highest rounded p-2">
+<span class="text-primary block font-bold text-base">100/100</span>
+<span class="text-on-surface-variant text-[11px] font-semibold">SEO Score</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ENGINEERING PHILOSOPHY & CLEAN ARCHITECTURE -->
+<section class="py-20 px-6 lg:px-12 max-w-7xl mx-auto w-full" id="architecture">
+<div class="max-w-7xl mx-auto">
+<div class="text-right mb-16">
+<div class="inline-flex items-center gap-2 text-primary font-mono-code text-xs font-bold mb-2">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span>ENGINEERING_PRINCIPLES</span>
+</div>
+<h2 class="font-headline text-3xl lg:text-4xl text-on-surface font-bold">فلسفة البناء وهندسة البرمجيات المستدامة</h2>
+<p class="font-body text-base text-on-surface-variant max-w-xl mt-2">
+البرمجة ليست مجرد كتابة أسطر كود تعمل الآن؛ بل هي تصميم أنظمة قوية، قابلة للتطوير والصيانة لسنوات قادمة.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Principle 1 -->
+<div class="bg-surface-container-low p-8 border border-surface-container-highest border-r-4 border-r-primary rounded">
+<div class="w-12 h-12 bg-primary-container text-primary rounded flex items-center justify-center mb-6 terminal-glow-sm">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<h3 class="font-headline text-xl text-on-surface font-bold mb-3">الكود النظيف واختبارات TDD</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+الالتزام بمبادئ SOLID و DRY، وتطبيق الاختبارات الآلية (Unit, Integration, E2E) لضمان موثوقية كل دالة برمجية قبل وصولها لخوادم الإنتاج.
+</p>
+<div class="mt-6 pt-4 border-t border-surface-container-highest font-mono-code text-xs text-primary font-bold">
+Jest // Vitest // Cypress
+</div>
+</div>
+<!-- Principle 2 -->
+<div class="bg-surface-container-low p-8 border border-surface-container-highest border-r-4 border-r-secondary rounded">
+<div class="w-12 h-12 bg-secondary-container/60 text-secondary rounded flex items-center justify-center mb-6 terminal-glow-sm">
+<span class="material-symbols-outlined">security</span>
+</div>
+<h3 class="font-headline text-xl text-on-surface font-bold mb-3">الأمان ومعايير OWASP الصارمة</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+تطبيق الحماية الدفاعية المتقدمة ضد هجمات XSS و SQL Injection و CSRF، وتشفير البيانات في حالة السكون والحركة، مع مراجعة الصلاحيات الصارمة.
+</p>
+<div class="mt-6 pt-4 border-t border-surface-container-highest font-mono-code text-xs text-secondary font-bold">
+OWASP Top 10 // JWT // OAuth2
+</div>
+</div>
+<!-- Principle 3 -->
+<div class="bg-surface-container-low p-8 border border-surface-container-highest border-r-4 border-r-tertiary rounded">
+<div class="w-12 h-12 bg-tertiary-container/60 text-tertiary rounded flex items-center justify-center mb-6 terminal-glow-sm">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<h3 class="font-headline text-xl text-on-surface font-bold mb-3">السرعة وقابلية التوسع (Scalability)</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+تصميم بنية قابلة للتوسع الأفقي (Horizontal Scaling) تدعم التخزين المؤقت متعدد الطبقات وفصل القراءة عن الكتابة (CQRS) لتحقيق أعلى درجات الأداء.
+</p>
+<div class="mt-6 pt-4 border-t border-surface-container-highest font-mono-code text-xs text-tertiary font-bold">
+Low Latency // High Concurrency
+</div>
+</div>
+</div>
+<!-- Terminal Fidelity Dark GitHub Style Heatmap -->
+<div class="mt-12 bg-surface-container-low p-6 lg:p-8 flex flex-col gap-6 border border-surface-container-highest rounded terminal-glow">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="text-right">
+<div class="flex items-center gap-2">
+<span class="font-mono-code text-xs text-primary font-bold bg-primary-container px-2 py-0.5 rounded border border-primary/30">GITHUB_COMMITS</span>
+<h4 class="font-headline text-lg text-on-surface font-bold">نشاط المساهمات البرمجية (Open Source &amp; Repos)</h4>
+</div>
+<span class="font-mono-code text-xs text-on-surface-variant font-semibold">1,482 Contributions in the last year</span>
+</div>
+<div class="flex items-center gap-2 font-mono-code text-xs text-on-surface-variant font-semibold">
+<span>Less</span>
+<span class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></span>
+<span class="w-3.5 h-3.5 bg-primary-container/60 rounded-sm border border-primary/30"></span>
+<span class="w-3.5 h-3.5 bg-inverse-primary rounded-sm border border-primary/50"></span>
+<span class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></span>
+<span>More</span>
+</div>
+</div>
+<!-- Heatmap Visual Grid -->
+<div class="w-full overflow-x-auto py-2">
+<div class="grid grid-flow-col grid-rows-7 gap-1.5 min-w-[680px]">
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary/80"></div>
+<div class="w-3.5 h-3.5 bg-primary-container/80 rounded-sm border border-primary/30"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary/80"></div>
+<div class="w-3.5 h-3.5 bg-inverse-primary rounded-sm border border-primary/60"></div>
+<div class="w-3.5 h-3.5 bg-primary-container rounded-sm border border-primary/40"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary-container rounded-sm border border-primary/40"></div>
+<div class="w-3.5 h-3.5 bg-primary-container/80 rounded-sm border border-primary/30"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-inverse-primary rounded-sm border border-primary/60"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary-container rounded-sm border border-primary/40"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-inverse-primary rounded-sm border border-primary/60"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary-container rounded-sm border border-primary/40"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary-container rounded-sm border border-primary/40"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-inverse-primary rounded-sm border border-primary/60"></div>
+<div class="w-3.5 h-3.5 bg-primary-container rounded-sm border border-primary/40"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary-container rounded-sm border border-primary/40"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary-container rounded-sm border border-primary/40"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary-container rounded-sm border border-primary/40"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-inverse-primary rounded-sm border border-primary/60"></div>
+<div class="w-3.5 h-3.5 bg-primary-container rounded-sm border border-primary/40"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary-container rounded-sm border border-primary/40"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest rounded-sm border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary-container rounded-sm border border-primary/40"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-surface-container-highest border border-surface-container-highest"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+<div class="w-3.5 h-3.5 bg-primary-container rounded-sm border border-primary/40"></div>
+<div class="w-3.5 h-3.5 bg-primary rounded-sm border border-primary"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TESTIMONIALS & PEER ENDORSEMENTS -->
+<section class="py-20 bg-surface-container-lowest/70 border-y border-surface-container-highest px-6 lg:px-12 w-full">
+<div class="max-w-7xl mx-auto">
+<div class="text-right mb-16">
+<div class="inline-flex items-center gap-2 text-primary font-mono-code text-xs font-bold mb-2">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span>ENGINEERING_LEADERSHIP_FEEDBACK</span>
+</div>
+<h2 class="font-headline text-3xl lg:text-4xl text-on-surface font-bold">ماذا يقول قادة التقنية والمهندسون</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Endorsement 1 -->
+<div class="bg-surface-container-low p-8 flex flex-col justify-between border border-surface-container-highest rounded relative">
+<span class="material-symbols-outlined text-4xl text-primary/10 absolute top-6 left-6">format_quote</span>
+<p class="font-body text-sm text-on-surface leading-relaxed mb-8 relative z-10">
+"صالح سالم هو أحد أندر المطورين القادرين على هندسة المعمارية السحابية من أعلى مستوى ثم النزول وكتابة خوارزميات فائقة السرعة على مستوى الكود. حول منصتنا من بطء شديد إلى زمن استجابة قياسي."
+</p>
+<div class="flex items-center gap-4 pt-4 border-t border-surface-container-highest">
+<div class="w-10 h-10 bg-primary-container rounded border border-primary/40 flex items-center justify-center font-mono-code font-bold text-primary terminal-glow-sm">
+CTO
+</div>
+<div>
+<span class="font-headline font-bold text-on-surface block text-sm">م. طارق المنصور</span>
+<span class="font-mono-code text-xs text-secondary font-semibold">Chief Technology Officer</span>
+</div>
+</div>
+</div>
+<!-- Endorsement 2 -->
+<div class="bg-surface-container-low p-8 flex flex-col justify-between border border-surface-container-highest rounded relative">
+<span class="material-symbols-outlined text-4xl text-primary/10 absolute top-6 left-6">format_quote</span>
+<p class="font-body text-sm text-on-surface leading-relaxed mb-8 relative z-10">
+"تسليمه للمشاريع دقيق للغاية، ولديه شغف صارم بجودة الكود وتوثيقه. نظام الـ Microservices الذي صممه لشركتنا يعمل منذ 18 شهراً دون ثانية توقف واحدة."
+</p>
+<div class="flex items-center gap-4 pt-4 border-t border-surface-container-highest">
+<div class="w-10 h-10 bg-surface-container-high rounded border border-secondary/40 flex items-center justify-center font-mono-code font-bold text-secondary terminal-glow-sm">
+VP
+</div>
+<div>
+<span class="font-headline font-bold text-on-surface block text-sm">م. ريم الشمراني</span>
+<span class="font-mono-code text-xs text-secondary font-semibold">VP of Engineering</span>
+</div>
+</div>
+</div>
+<!-- Endorsement 3 -->
+<div class="bg-surface-container-low p-8 flex flex-col justify-between border border-surface-container-highest rounded relative">
+<span class="material-symbols-outlined text-4xl text-primary/10 absolute top-6 left-6">format_quote</span>
+<p class="font-body text-sm text-on-surface leading-relaxed mb-8 relative z-10">
+"التعامل مع صالح أعطى فريقنا قفزة نوعية في اعتماد تقنيات Next.js الحديثة وحل مشاكل قواعد البيانات المعقدة في PostgreSQL. كفاءة استثنائية وأخلاق عمل رفيعة."
+</p>
+<div class="flex items-center gap-4 pt-4 border-t border-surface-container-highest">
+<div class="w-10 h-10 bg-tertiary-container/80 rounded border border-tertiary/40 flex items-center justify-center font-mono-code font-bold text-tertiary terminal-glow-sm">
+PM
+</div>
+<div>
+<span class="font-headline font-bold text-on-surface block text-sm">أحمد الزهراني</span>
+<span class="font-mono-code text-xs text-tertiary font-semibold">Senior Product Manager</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DIRECT CONTACT & HIRE DEVELOPER SECTION -->
+<section class="py-20 px-6 lg:px-12 max-w-7xl mx-auto w-full" id="contact">
+<div class="max-w-7xl mx-auto">
+<div class="bg-surface-container-low p-8 lg:p-14 relative overflow-hidden border border-surface-container-highest rounded terminal-glow">
+<div class="absolute top-0 right-0 w-1.5 h-full bg-primary"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 text-right">
+<div class="inline-flex items-center gap-2 text-primary font-mono-code text-xs font-bold mb-2">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span>START_COLLABORATION</span>
+</div>
+<h2 class="font-headline text-2xl lg:text-3xl text-on-surface font-bold leading-snug">
+هل لديك مشروع ويب طموح، أو تبحث عن مهندس برمجيات متفرغ لتعاقد؟
+</h2>
+<p class="font-body text-base text-on-surface-variant mt-4 leading-relaxed max-w-xl">
+متاح للتعاقد الحر (Freelance / Contract) وبناء المنصات من الصفر (Greenfield Systems)، أو قيادة وتطوير البنية التقنية لشركتك الناشئة بنماذج هندسية عالمية.
+</p>
+<!-- Dev Contact Links (No Photos) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+<div class="flex items-center gap-3 bg-surface-container p-3.5 border border-surface-container-highest rounded">
+<div class="w-10 h-10 bg-primary-container text-primary rounded flex items-center justify-center font-mono-code font-bold text-sm border border-primary/30">
+@
+</div>
+<div class="text-right">
+<span class="font-mono-code text-[11px] text-on-surface-variant block font-bold">البريد المباشر</span>
+<a class="font-mono-code text-xs text-primary font-bold hover:underline" dir="ltr" href="mailto:salimsalh016@gmail.com">salimsalh016@gmail.com</a>
+</div>
+</div>
+<div class="flex items-center gap-3 bg-surface-container p-3.5 border border-surface-container-highest rounded">
+<div class="w-10 h-10 bg-surface-container-high text-secondary rounded flex items-center justify-center font-mono-code font-bold text-sm border border-secondary/30">
+git
+</div>
+<div class="text-right">
+<span class="font-mono-code text-[11px] text-on-surface-variant block font-bold">مستودع الكود</span>
+<span class="font-mono-code text-xs text-secondary font-bold">github.com/salhsalim</span>
+</div>
+</div>
+<div class="flex items-center gap-3 bg-surface-container p-3.5 border border-surface-container-highest rounded">
+<div class="w-10 h-10 bg-tertiary-container/80 text-tertiary rounded flex items-center justify-center font-mono-code font-bold text-sm border border-tertiary/30">
+in
+</div>
+<div class="text-right">
+<span class="font-mono-code text-[11px] text-on-surface-variant block font-bold">الشبكة المهنية</span>
+<span class="font-mono-code text-xs text-tertiary font-bold">linkedin.com/in/salhsalim</span>
+</div>
+</div>
+<div class="flex items-center gap-3 bg-surface-container p-3.5 border border-surface-container-highest rounded">
+<div class="w-10 h-10 bg-primary-container text-primary rounded border border-primary/30 flex items-center justify-center font-mono-code font-bold text-sm">
+cli
+</div>
+<div class="text-right">
+<span class="font-mono-code text-[11px] text-on-surface-variant block font-bold">نطاق العمل</span>
+<span class="font-mono-code text-xs text-on-surface font-bold">الرياض / عن بُعد (Remote Global)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Dev Hire Form -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-8 text-right border border-surface-container-highest rounded terminal-border-glow">
+<div class="flex items-center justify-between mb-4 pb-3 border-b border-surface-container-highest">
+<h3 class="font-headline text-lg text-on-surface font-bold">طلب تنفيذ مشروع أو تعاقد</h3>
+<span class="font-mono-code text-xs text-primary font-bold bg-primary-container px-2 py-0.5 rounded border border-primary/30">Fast Reply</span>
+</div>
+<form class="flex flex-col gap-4" onsubmit="event.preventDefault(); alert('تم إرسال تفاصيل المشروع بنجاح! سيقوم صالح سالم بالرد البرمجي المباشر خلال ساعات قليلة.');">
+<div>
+<label class="block font-mono-code text-xs text-on-surface font-bold uppercase mb-1">الاسم أو اسم الشركة</label>
+<input class="w-full bg-surface-container p-3 text-on-surface font-mono-code text-xs outline-none border border-surface-container-highest rounded focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Tech Startup Inc. / م. أحمد..." required="" type="text"/>
+</div>
+<div>
+<label class="block font-mono-code text-xs text-on-surface font-bold uppercase mb-1">البريد الإلكتروني للرد</label>
+<input class="w-full bg-surface-container p-3 text-on-surface font-mono-code text-xs outline-none border border-surface-container-highest rounded focus:border-primary focus:ring-1 focus:ring-primary" placeholder="developer@company.com" required="" type="email"/>
+</div>
+<div>
+<label class="block font-mono-code text-xs text-on-surface font-bold uppercase mb-1">نوع المشروع والمكدس المطلوب</label>
+<select class="w-full bg-surface-container p-3 text-on-surface font-mono-code text-xs outline-none border border-surface-container-highest rounded focus:border-primary focus:ring-1 focus:ring-primary">
+<option>بناء منصة متكاملة (Full-Stack Next.js + Node.js)</option>
+<option>تطوير وتوسيع بنية المعالجة الخلفية والـ APIs</option>
+<option>إعادة هيكلة وتحديث أداء نظام قائم (Performance Tuning)</option>
+<option>استشارة معمارية برمجية ومراجعة كود (Code Audit)</option>
+<option>عقد هندسي شهري / Lead Architect Contract</option>
+</select>
+</div>
+<div>
+<label class="block font-mono-code text-xs text-on-surface font-bold uppercase mb-1">نبذة موجزة عن النظام</label>
+<textarea class="w-full bg-surface-container p-3 text-on-surface font-mono-code text-xs outline-none border border-surface-container-highest rounded focus:border-primary focus:ring-1 focus:ring-primary h-20" placeholder="وصف موجز للمتطلبات وأهداف الإطلاق..."></textarea>
+</div>
+<button class="w-full mt-2 bg-primary hover:bg-white text-on-primary font-mono-code text-sm font-bold py-3.5 transition-all rounded border border-primary/80 terminal-glow-sm flex items-center justify-center gap-2" type="submit">
+<span>dispatch_request()</span>
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div></main>
+<!-- FOOTER (Terminal Fidelity Style) -->
+<footer class="w-full bg-surface-container-lowest text-on-surface mt-20 border-t border-surface-container-highest"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-16"><div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-4 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-container text-primary border border-primary/40 flex items-center justify-center font-mono-code font-bold text-sm terminal-glow-sm">&lt;/&gt;</div>
+<span class="font-headline text-lg text-on-surface font-bold">صالح سالم</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant max-w-sm leading-relaxed">
+مهندس برمجيات ومطور Full-Stack متخصص في هندسة النظم السحابية وتطبيقات الويب الحديثة وحلول الأداء الفائق.
+</p>
+<div class="flex items-center gap-3 mt-2 font-mono-code text-xs font-bold">
+<a class="px-3 py-1.5 bg-surface-container-low border border-surface-container-highest rounded hover:border-primary text-secondary transition-colors" href="#">GitHub</a>
+<a class="px-3 py-1.5 bg-surface-container-low border border-surface-container-highest rounded hover:border-primary text-secondary transition-colors" href="#">LinkedIn</a>
+<a class="px-3 py-1.5 bg-surface-container-low border border-surface-container-highest rounded hover:border-primary text-secondary transition-colors" href="#">Discord</a>
+<a class="px-3 py-1.5 bg-surface-container-low border border-surface-container-highest rounded hover:border-primary text-secondary transition-colors" href="mailto:salimsalh016@gmail.com">Email</a>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-4">
+<h4 class="font-headline text-base text-on-surface font-bold border-b border-surface-container-highest pb-1">روابط الوصول السريع</h4>
+<div class="grid grid-cols-2 gap-2 font-body text-sm">
+<a class="hover:text-primary font-medium text-on-surface-variant transition-colors" href="#">الرئيسية</a>
+<a class="hover:text-primary font-medium text-on-surface-variant transition-colors" href="#tech-stack">المكدس البرمجي</a>
+<a class="hover:text-primary font-medium text-on-surface-variant transition-colors" href="#projects">المشاريع المنفذة</a>
+<a class="hover:text-primary font-medium text-on-surface-variant transition-colors" href="#terminal-section">كود حي (Playground)</a>
+<a class="hover:text-primary font-medium text-on-surface-variant transition-colors" href="#architecture">فلسفة الهندسة</a>
+<a class="hover:text-primary font-medium text-on-surface-variant transition-colors" href="#contact">طلب تعاقد برمجيات</a>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-4">
+<h4 class="font-headline text-base text-on-surface font-bold border-b border-surface-container-highest pb-1">النشرة الهندسية الأسبوعية</h4>
+<p class="font-body text-sm text-on-surface-variant">
+تحليلات في تحسين أداء الويب، معمارية Microservices، وتقنيات Next.js 14.
+</p>
+<form class="flex flex-col sm:flex-row gap-2 mt-2">
+<input class="bg-surface-container-low text-on-surface font-mono-code text-xs px-4 py-2.5 outline-none border border-surface-container-highest rounded focus:border-primary placeholder:text-outline-variant flex-1" placeholder="dev@company.com" type="email"/>
+<button class="bg-primary hover:bg-white text-on-primary font-mono-code text-xs font-bold px-5 py-2.5 transition-colors shrink-0 rounded border border-primary/80 terminal-glow-sm" type="button">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono-code text-xs text-on-surface-variant border-t border-surface-container-highest">
+<p class="font-medium">© 2026 Saleh Salim (Lead Full-Stack Web Developer). Terminal Fidelity &amp; Clean Architecture.</p>
+<div class="flex items-center gap-6 font-bold">
+<span class="text-primary flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block shadow-[0_0_6px_#34d399]"></span> All Systems Operational</span>
+<span class="hover:text-primary underline text-on-surface">MIT License</span>
+</div>
+</div>
+</div></footer><div id="sp"></div>
+<div id="toast" class="bg-surface-container-lowest border border-primary/50 text-on-surface font-mono-code text-xs font-bold px-5 py-3 rounded terminal-glow text-right" dir="rtl" role="status"></div>
+<button id="top" aria-label="العودة للأعلى" class="w-11 h-11 rounded bg-primary-container text-primary border border-primary/40 terminal-glow-sm flex items-center justify-center"><span class="material-symbols-outlined">arrow_upward</span></button>
+<script>
+(function(){
+var $=function(q,r){return(r||document).querySelector(q)},$$=function(q,r){return[].slice.call((r||document).querySelectorAll(q))};
+var toast=$('#toast'),tt;
+function say(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},3800)}
+/* mobile menu */
+var nav=$('header nav'),bar=$('header > div > div:last-child');
+var mm=document.createElement('div');mm.id='mm';mm.className='xl:hidden flex-col gap-1 px-6 pb-5 pt-2 bg-surface/95 border-t border-surface-container-highest';
+$$('a',nav).forEach(function(a){var c=a.cloneNode(true);c.className='block py-3 font-headline text-sm text-on-surface-variant hover:text-primary border-b border-surface-container-highest/60';c.removeAttribute('aria-current');c.addEventListener('click',function(){mm.classList.remove('open')});mm.appendChild(c)});
+$('header').appendChild(mm);
+var hb=document.createElement('button');hb.setAttribute('aria-label','القائمة');hb.className='xl:hidden w-10 h-10 rounded border border-surface-container-highest text-primary flex items-center justify-center';hb.innerHTML='<span class="material-symbols-outlined">menu</span>';
+hb.onclick=function(){mm.classList.toggle('open')};bar.appendChild(hb);
+/* scroll spy */
+var links=$$('a[data-path]',nav),act=['text-primary','font-bold','border-b-2','border-primary'],idle=['text-on-surface-variant'];
+var map={home:null,stack:'#tech-stack',projects:'#projects',architecture:'#architecture',terminal:'#terminal-section',contact:'#contact'};
+function setActive(k){links.forEach(function(a){var on=a.dataset.path===k;act.forEach(function(c){a.classList.toggle(c,on)});idle.forEach(function(c){a.classList.toggle(c,!on)});if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')})}
+function spy(){var y=window.scrollY+140,cur='home';Object.keys(map).forEach(function(k){var e=map[k]&&$(map[k]);if(e&&e.getBoundingClientRect().top+window.scrollY<=y)cur=k});setActive(cur);
+var h=document.documentElement.scrollHeight-innerHeight;$('#sp').style.width=(h>0?scrollY/h*100:0)+'%';$('#top').classList.toggle('show',scrollY>700)}
+addEventListener('scroll',spy,{passive:true});spy();
+$('#top').onclick=function(){scrollTo({top:0,behavior:'smooth'})};
+/* reveal */
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
+$$('main section').forEach(function(sec,i){if(i===0)return;$$(':scope > div > *, :scope > *',sec).slice(0,8).forEach(function(el){el.classList.add('rv');io.observe(el)})})}
+/* forms */
+var TO='salimsalh016@gmail.com';function mail(s,b){var a=document.createElement('a');a.href='mailto:'+TO+'?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(b);document.body.appendChild(a);a.click();a.remove();say('جاري فتح تطبيق البريد… أو راسلني مباشرة على '+TO)}
+$$('form').forEach(function(f){f.removeAttribute('onsubmit');f.addEventListener('submit',function(e){e.preventDefault();
+if(f.closest('footer')){mail('اشتراك في النشرة الهندسية','أرغب في الاشتراك بالنشرة. بريدي: '+$('input',f).value);return}
+var v=$$('input,select,textarea',f).map(function(x){return x.value});mail('طلب مشروع من '+v[0],'الاسم: '+v[0]+'\nالبريد: '+v[1]+'\nنوع المشروع: '+v[2]+'\nالتفاصيل: '+v[3]);f.reset()})});
+var sub=$('footer button[type=button]');if(sub)sub.addEventListener('click',function(){var i=$('footer input[type=email]');if(i.value&&i.checkValidity()){mail('اشتراك في النشرة الهندسية','أرغب في الاشتراك بالنشرة. بريدي: '+i.value);i.value=''}else{say('من فضلك أدخل بريدًا إلكترونيًا صحيحًا');i.focus()}});
+})();
+</script>
+</body></html>
